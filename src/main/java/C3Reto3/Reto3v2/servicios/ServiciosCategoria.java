@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class ServiciosCategoria {
-     @Autowired
+    @Autowired
     private RepositorioCategoria metodosCrud;
 
     public List<Categoria> getAll() {

@@ -11,7 +11,7 @@
 	<groupId>C3Reto3</groupId>
 	<artifactId>Reto3v2</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Reto3v2</name>
+	<name>Reto3_BackEnd</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>

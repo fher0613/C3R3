@@ -1,6 +1,8 @@
 
 package C3Reto3.Reto3v2.modelo;
-
+    /*Autor> Fernando Forero
+    
+    */
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
 import java.util.List;
@@ -17,7 +19,9 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "games")
 public class Game implements Serializable{
+    /*Creamos la tabla Games en la BD
     
+    */    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     
@@ -26,7 +30,9 @@ public class Game implements Serializable{
     private String developer;
     private Integer year;    
     private String description;
-
+    
+    /*Hacemos las relaciones entre las tablas    
+    */
     @ManyToOne
     @JoinColumn(name = "categoryId")
     @JsonIgnoreProperties("games")
@@ -40,7 +46,7 @@ public class Game implements Serializable{
     @JsonIgnoreProperties({"game", "message"})
     private List<Reservaciones> reservations;
 
-    //A PARTIR DE AQUI CREAMOS LOS METODOS GET AND SET
+    //A PARTIR DE AQUI CREAMOS LOS METODOS GET AND SET PARA OBTENER LOS DATOS
 
     public Integer getId() {
         return id;
