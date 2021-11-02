@@ -2,6 +2,8 @@
 package C3Reto3.Reto3v2.controlador;
 
 import C3Reto3.Reto3v2.modelo.Reservaciones;
+import C3Reto3.Reto3v2.repositorio.ContadorClientes;
+import C3Reto3.Reto3v2.repositorio.StatusReservas;
 import C3Reto3.Reto3v2.servicios.ServiciosReservaciones;
 import java.util.List;
 import java.util.Optional;
@@ -53,5 +55,20 @@ public class ControladorReservaciones {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public boolean delete(@PathVariable("id") int reservationId) {
         return servicio.deleteReservation(reservationId);
+    }
+    
+    @GetMapping("/report-status")
+    public StatusReservas getReservas(){
+        return servicio.reporteStatusServicio();
+    }
+    
+    @GetMapping("/report-dates/{dateOne}/{dateTwo}")
+    public List<Reservaciones> getReservasTiempo (@PathVariable("dateOne")String dateOne, @PathVariable("dateTwo")String dateTwo ){
+        return servicio.reporteTiempoServicio(dateOne, dateTwo);
+    }
+    
+    @GetMapping("/report-clients")
+    public List<ContadorClientes> getClientes(){
+        return servicio.reporteClientesServicio();
     }
 }
